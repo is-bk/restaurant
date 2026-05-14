@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LE DETROIT D'OR</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,11 @@
       overflow-x:hidden;
     }
 
+    img{
+      max-width:100%;
+      display:block;
+    }
+
     ::-webkit-scrollbar{
       width:10px;
     }
@@ -44,26 +49,28 @@
     header{
       position:fixed;
       top:0;
+      left:0;
       width:100%;
       z-index:1000;
-      backdrop-filter:blur(20px);
       background:rgba(0,0,0,0.35);
+      backdrop-filter:blur(20px);
       border-bottom:1px solid rgba(255,196,0,0.08);
       transition:0.5s;
     }
 
     header.scrolled{
-      background:rgba(0,0,0,0.85);
+      background:rgba(0,0,0,0.9);
       padding:5px 0;
     }
 
     .navbar{
       max-width:1300px;
       margin:auto;
+      padding:20px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:20px;
+      gap:20px;
     }
 
     .logo h1{
@@ -74,14 +81,16 @@
 
     .logo p{
       color:#9f7721;
-      letter-spacing:5px;
+      letter-spacing:4px;
       font-size:11px;
       text-transform:uppercase;
     }
 
     nav{
       display:flex;
-      gap:40px;
+      align-items:center;
+      gap:35px;
+      flex-wrap:wrap;
     }
 
     nav a{
@@ -100,6 +109,7 @@
 
     .hero{
       height:100vh;
+      min-height:700px;
       position:relative;
       display:flex;
       justify-content:center;
@@ -110,6 +120,7 @@
 
     .hero img{
       position:absolute;
+      inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
@@ -129,7 +140,7 @@
     .overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to bottom,rgba(0,0,0,0.45),rgba(0,0,0,0.92));
+      background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.92));
     }
 
     .hero-content{
@@ -137,7 +148,6 @@
       z-index:2;
       text-align:center;
       max-width:1000px;
-      padding:20px;
       animation:fadeUp 1.5s ease;
     }
 
@@ -171,7 +181,7 @@
     .hero-content h1 span{
       color:#f5c542;
       display:block;
-      margin-top:15px;
+      margin-top:10px;
     }
 
     .hero-content .desc{
@@ -179,6 +189,8 @@
       font-size:1.2rem;
       line-height:1.8;
       margin-bottom:40px;
+      max-width:800px;
+      margin-inline:auto;
     }
 
     /* ================= BUTTONS ================= */
@@ -221,7 +233,7 @@
       color:black;
     }
 
-    /* ================= SECTIONS ================= */
+    /* ================= GENERAL ================= */
 
     section{
       padding:140px 8%;
@@ -242,6 +254,7 @@
     .section-title h2{
       font-size:4rem;
       color:#f5c542;
+      line-height:1.2;
     }
 
     /* ================= ABOUT ================= */
@@ -270,6 +283,7 @@
       font-size:4rem;
       color:#f5c542;
       margin-bottom:30px;
+      line-height:1.2;
     }
 
     .about-text p{
@@ -310,6 +324,7 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:15px;
       margin-bottom:20px;
     }
 
@@ -383,7 +398,7 @@
 
     footer{
       text-align:center;
-      padding:40px;
+      padding:40px 20px;
       color:#666;
       border-top:1px solid rgba(255,196,0,0.08);
     }
@@ -394,19 +409,19 @@
 
       .navbar{
         flex-direction:column;
-        gap:20px;
+        text-align:center;
       }
 
       nav{
-        gap:20px;
-        flex-wrap:wrap;
         justify-content:center;
+        gap:20px;
       }
 
       .hero{
-        padding-top:140px;
         height:auto;
         min-height:100vh;
+        padding-top:160px;
+        padding-bottom:80px;
       }
 
       .hero-content h1{
@@ -429,12 +444,12 @@
         height:500px;
       }
 
-      section{
-        padding:100px 40px;
-      }
-
       .gallery-grid{
         grid-template-columns:repeat(2,1fr);
+      }
+
+      section{
+        padding:100px 40px;
       }
 
     }
@@ -443,8 +458,8 @@
 
     @media(max-width:768px){
 
-      nav{
-        display:none;
+      .navbar{
+        padding:15px 20px;
       }
 
       .logo{
@@ -455,12 +470,21 @@
         font-size:1.6rem;
       }
 
-      .hero{
-        padding:140px 20px 80px;
+      .logo p{
+        letter-spacing:3px;
       }
 
-      .hero-content{
-        padding:0;
+      nav{
+        justify-content:center;
+        gap:15px;
+      }
+
+      nav a{
+        font-size:14px;
+      }
+
+      .hero{
+        padding:180px 20px 100px;
       }
 
       .hero-content p:first-child{
@@ -496,9 +520,13 @@
         margin-bottom:50px;
       }
 
+      .section-title p{
+        font-size:12px;
+        letter-spacing:4px;
+      }
+
       .section-title h2{
         font-size:2.2rem;
-        line-height:1.2;
       }
 
       .about{
@@ -506,7 +534,7 @@
       }
 
       .about-text h3{
-        font-size:2.2rem;
+        font-size:2.3rem;
       }
 
       .about-text p{
@@ -530,7 +558,6 @@
       .card-top{
         flex-direction:column;
         align-items:flex-start;
-        gap:10px;
       }
 
       .gallery-grid{
@@ -547,8 +574,37 @@
       }
 
       footer{
-        padding:30px 20px;
         font-size:14px;
+      }
+
+    }
+
+    /* ================= SMALL MOBILE ================= */
+
+    @media(max-width:480px){
+
+      .hero-content h1{
+        font-size:2.4rem;
+      }
+
+      .hero-content .desc{
+        font-size:0.9rem;
+      }
+
+      .section-title h2{
+        font-size:1.9rem;
+      }
+
+      .about-text h3{
+        font-size:2rem;
+      }
+
+      .about img{
+        height:280px;
+      }
+
+      .gallery-item{
+        height:240px;
       }
 
     }
@@ -559,6 +615,7 @@
 <body>
 
   <header id="header">
+
     <div class="navbar">
 
       <div class="logo">
@@ -575,6 +632,7 @@
       </nav>
 
     </div>
+
   </header>
 
   <section class="hero" id="home">
@@ -604,6 +662,164 @@
     </div>
 
   </section>
+
+  <section id="about">
+
+    <div class="section-title reveal">
+      <p>À propos</p>
+      <h2>Le restaurant lounge nouvelle génération</h2>
+    </div>
+
+    <div class="about">
+
+      <div class="about-text reveal">
+
+        <h3>L'art du premium</h3>
+
+        <p>
+          Le Detroit D'Or mélange gastronomie, élégance et ambiance lounge dans une expérience immersive moderne inspirée des restaurants haut de gamme.
+        </p>
+
+      </div>
+
+      <img class="reveal" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1974&auto=format&fit=crop">
+
+    </div>
+
+  </section>
+
+  <section id="menu">
+
+    <div class="section-title reveal">
+      <p>Notre menu</p>
+      <h2>Saveurs & Excellence</h2>
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="card">
+
+        <div class="card-top">
+          <h4>Salade grecque</h4>
+          <span class="price">25$</span>
+        </div>
+
+        <p>Une spécialité raffinée préparée avec soin.</p>
+
+        <button class="btn gold">Commander</button>
+
+      </div>
+
+      <div class="card">
+
+        <div class="card-top">
+          <h4>Poisson à la congolaise</h4>
+          <span class="price">32$</span>
+        </div>
+
+        <p>Une expérience culinaire premium et authentique.</p>
+
+        <button class="btn gold">Commander</button>
+
+      </div>
+
+      <div class="card">
+
+        <div class="card-top">
+          <h4>Roulade de saumon</h4>
+          <span class="price">37$</span>
+        </div>
+
+        <p>Une présentation élégante et moderne.</p>
+
+        <button class="btn gold">Commander</button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="gallery">
+
+    <div class="section-title reveal">
+      <p>Galerie</p>
+      <h2>Notre univers</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1974&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1974&auto=format&fit=crop">
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="contact" id="contact">
+
+    <div class="section-title reveal">
+      <p>Contact</p>
+      <h2>Réservez maintenant</h2>
+    </div>
+
+    <p class="reveal">
+      Vivez une expérience culinaire moderne et premium dans un espace chic et chaleureux.
+    </p>
+
+    <button class="btn gold reveal">
+      Réserver une table
+    </button>
+
+  </section>
+
+  <footer>
+    © 2026 LE DETROIT D'OR — Tous droits réservés.
+  </footer>
+
+  <script>
+
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const reveals = document.querySelectorAll('.reveal, .card, .gallery-item');
+
+    function revealElements() {
+
+      reveals.forEach((el) => {
+
+        const windowHeight = window.innerHeight;
+        const revealTop = el.getBoundingClientRect().top;
+
+        if (revealTop < windowHeight - 100) {
+          el.classList.add('show');
+        }
+
+      });
+
+    }
+
+    window.addEventListener('scroll', revealElements);
+
+    revealElements();
+
+  </script>
 
 </body>
 </html>
